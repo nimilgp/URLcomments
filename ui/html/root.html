@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>URLcomments</title>
+</head>
+
+<style>
+    .marquee {
+        animation: marquee 10s linear infinite;
+    }
+</style>
+
+<body class="bg-gray-900 flex flex-col items-center justify-start min-h-screen">
+    <div class="bg-green-#0b7261 text-white py-5 w-full text-center">
+        <h1 class="text-7xl font-bold">URLcomments</h1>
+    </div>
+
+    <div class="text-center mt-4">
+        <p class="text-3xl text-white">#Democratizing Discussions and Community Interaction across the Web</p>
+    </div>
+
+    <div class="w-full max-w-xl mx-auto bg-white shadow-lg rounded-lg mt-10">
+        <div class="text-center p-10">
+            <form action="/search" method="get">
+                <input name="url" type="text" placeholder="Add your link"
+                    class="w-full p-4 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                <button type="submit" class="bg-blue-500 text-white rounded-lg px-6 py-2">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="w-full max-w-full overflow-hidden whitespace-nowrap mt-auto mb-4">
+        <marquee class="marquee" scrollamount="25" behavior="scroll" direction="left">
+            <h2 class="text-white text-8xl font-bold inline-block text-transform: uppercase; ">
+                NO ONE CAN STOP YOU FROM SAYING WHAT YOU HAVE TO SAY &nbsp;
+
+            </h2>
+        </marquee>
+
+    </div>
+
+    <div class="w-full text-white text-4xl font-bold ">
+        <marquee class="marquee" scrollamount="34" behavior="scroll" direction="right">
+            FREE SPEECH &nbsp;
+            FREE SPEECH &nbsp;
+            FREE SPEECH &nbsp;
+
+
+            FREE SPEECH &nbsp;
+            FREE SPEECH &nbsp;
+            FREE SPEECH &nbsp;
+            FREE SPEECH &nbsp;
+            FREE SPEECH &nbsp;
+            FREE SPEECH &nbsp;
+            FREE SPEECH &nbsp;
+            FREE SPEECH &nbsp;
+            FREE SPEECH &nbsp;
+            FREE SPEECH &nbsp; 
+            FREE SPEECH &nbsp;
+            FREE SPEECH &nbsp;
+            FREE SPEECH &nbsp;
+            FREE SPEECH &nbsp;
+            FREE SPEECH &nbsp;
+        </marquee>
+    </div>
+
+    <div class="bg-red-500 text-white text-3xl text-center py-10 mt-auto w-full font-bold">
+        Powered by HTMX+GO
+    </div>
+</body>
+
+</html>
