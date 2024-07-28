@@ -36,8 +36,11 @@ func main() {
 	mux.HandleFunc("GET /{$}", app.getRoot)
 	mux.HandleFunc("POST /new-comment", app.postComment)
 	mux.HandleFunc("POST /new-reply-comment", app.postReplyComment)
+	mux.HandleFunc("GET /swap", app.getbox)
+	mux.HandleFunc("GET /swaplink", app.getlink)
 
 	if err := http.ListenAndServe(app.port, mux); err != nil {
 		log.Fatal(err)
+
 	}
 }
