@@ -5,9 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/static/htmx.min.js"></script>
     <title>URLcomments</title>
 </head>
-
+<script>
+    function redirect() {
+        window.location.href = '/search.html';
+    }
+</script>
 <style>
     .marquee {
         animation: marquee 10s linear infinite;
@@ -16,23 +21,28 @@
 
 <body class="bg-gray-900 flex flex-col items-center justify-start min-h-screen">
     <div class="bg-green-#0b7261 text-white py-5 w-full text-center">
-        <h1 class="text-7xl font-bold">URLcomments</h1>
+       <h1 class="text-7xl font-bold" hx-get="/swaplink" hx-target="#swapbox"  hx-swap="outerHTML" >URLcomments</h1>
     </div>
 
     <div class="text-center mt-4">
-        <p class="text-3xl text-white">#Democratizing Discussions and Community Interaction across the Web</p>
+        <p class="text-3xl text-white" >#Democratizing Discussions and Community Interaction across the Web</p>
     </div>
 
-    <div
-        class="w-8/12 p-7 mt-10 mx-auto flex justify-center items-center text-sky-200 border-2 rounded-lg border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f]">
+    <div id="box" 
+    class="w-8/12 p-7 mt-10 mx-auto flex justify-center items-center text-sky-200 border-2 rounded-lg border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f]">
         <div class="text-center">
-            <form action="/search" method="get">
+            <form method="post">
                 <input name="url" type="text" placeholder="Add your link"
                     class="w-full p-4 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
-                <button type="submit" class="bg-blue-500 text-white rounded-lg px-6 py-2 font-bold">Search</button>
-            </form>
+                <button type="submit" 
+                    class="bg-blue-500 w-full text-white rounded-lg px-6 py-2 font-bold" hx-get="/swap" hx-target="#box" hx-swap="outerHTML">Search</button>
+            </form>         
         </div>
     </div>
+    
+
+
+
 
     <div class="w-full max-w-full overflow-hidden whitespace-nowrap mt-auto mb-4">
         <marquee class="marquee" scrollamount="25" behavior="scroll" direction="left">
@@ -44,13 +54,13 @@
 
     </div>
 
+
+   
     <div class="w-full text-white text-4xl font-bold ">
         <marquee class="marquee" scrollamount="34" behavior="scroll" direction="right">
             FREE SPEECH &nbsp;
             FREE SPEECH &nbsp;
             FREE SPEECH &nbsp;
-
-
             FREE SPEECH &nbsp;
             FREE SPEECH &nbsp;
             FREE SPEECH &nbsp;
@@ -69,9 +79,12 @@
         </marquee>
     </div>
 
+    
+ 
     <div class="bg-red-500 text-white text-3xl text-center py-10 mt-auto w-full font-bold">
-        Powered by HTMX+GO
+        Powered by HTMX+GO+PostgreSQL
     </div>
 </body>
 
 </html>
+

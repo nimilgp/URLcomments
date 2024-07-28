@@ -12,8 +12,11 @@ func main() {
 	mux.Handle("GET /static/", http.StripPrefix("/static", fileServer))
 
 	mux.HandleFunc("GET /{$}", getRoot)
+	mux.HandleFunc("GET /swap", getbox)
+	mux.HandleFunc("GET /swaplink", getlink)
 
 	if err := http.ListenAndServe(":3333", mux); err != nil {
 		log.Fatal(err)
+
 	}
 }
